@@ -8,8 +8,8 @@ repositories {
 }
 
 def allureVersion = "2.14.0"
-selenideVersion = '5.23.0'
-JUnitVersion = '5.7.2'
+def selenideVersion = '5.24.3'
+def JUnitVersion = "2.14.0"
 allure {
     version = allureVersion
     aspectjweaver = true
@@ -33,7 +33,7 @@ dependencies {
     )
     testRuntimeOnly(
             "org.junit.jupiter:junit-jupiter-engine:5.7.1",
-            "org.slf4j: slf4j-simple: 1.7.29"
+            'org.slf4j:slf4j-simple:1.7.32'
     )
 
 }
@@ -48,7 +48,8 @@ tasks.withType(Test){
     useJUnitPlatform()
     testLogging {
         lifecycle {
-            events "started", "skipped", "failed", "standart_error", "standart_out"
+            events 'STARTED', 'PASSED', 'SKIPPED', 'FAILED', 'STANDARD_OUT', 'STANDARD_ERROR'
+            //"started", "skipped", "failed", "standart_error", "standart_out"
             exceptionFormat "short"
         }
     }
