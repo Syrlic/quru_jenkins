@@ -6,6 +6,7 @@ import io.qameta.allure.Allure;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -21,7 +22,13 @@ public class WithAllureDemo {
 
     @BeforeAll
     public static void setup(){
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+
+        Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+
     }
 
     @Test
