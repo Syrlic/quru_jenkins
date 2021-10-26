@@ -2,7 +2,9 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import helper.TestBase;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
@@ -18,26 +20,10 @@ import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class WithAllureDemo {
+public class WithAllureDemo extends TestBase {
     public static final String URL = "https://github.com";
     public static final String REPOSITORY = "Syrlic/guru_allure";
     public static final String NUMBER = "1";
-
-    @BeforeAll
-    public static void setup() throws MalformedURLException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "91.0");
-//        RemoteWebDriver driver = new RemoteWebDriver(
-//                URI.create("http://selenoid:4444/wd/hub").toURL(),
-//                capabilities
-//        );
-        Configuration.browserCapabilities = capabilities;
-        Configuration.startMaximized = true;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-
-    }
 
     @Test
     public void  testIssuePresentInRepoLambda(){
@@ -66,4 +52,7 @@ public class WithAllureDemo {
         InputStream stream = new ByteArrayInputStream(screenshot(OutputType.BYTES));
         Allure.attachment("attachment", stream);
     }
+
+
+
 }
