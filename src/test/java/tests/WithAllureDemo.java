@@ -7,9 +7,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URI;
 
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
@@ -21,10 +24,15 @@ public class WithAllureDemo {
     public static final String NUMBER = "1";
 
     @BeforeAll
-    public static void setup(){
+    public static void setup() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
-
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "91.0");
+//        RemoteWebDriver driver = new RemoteWebDriver(
+//                URI.create("http://selenoid:4444/wd/hub").toURL(),
+//                capabilities
+//        );
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
