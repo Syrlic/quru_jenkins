@@ -16,8 +16,8 @@ public class TestBase {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability("browserName", config.browserName());
-        capabilities.setCapability("browserVersion", config.browserVersion());
+        capabilities.setCapability("browserName", System.getProperty("browser"));
+        capabilities.setCapability("browserVersion", System.getProperty("version"));
 
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;

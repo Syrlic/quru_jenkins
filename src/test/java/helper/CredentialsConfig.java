@@ -8,8 +8,5 @@ public interface CredentialsConfig extends Config {
     String password();
     String URL();
     String repository();
-    String browserName();
-    String browserVersion();
     String urlSelenoid();
-
 }
