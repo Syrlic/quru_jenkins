@@ -56,10 +56,9 @@ tasks.withType(Test) {
         }
     }
 }
-task sout_tests (type: Test){
-    useJUnitPlatform{
-        includeTags("with_browser")
-        includeTags("without_browser")
-    }
+//task sout_tests (type: Test){
+//    useJUnitPlatform{
+//        includeTags("with_browser")
+//        includeTags("without_browser")
+//    }
 
-}

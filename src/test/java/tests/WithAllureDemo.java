@@ -18,7 +18,7 @@ public class WithAllureDemo extends TestBase {
     public static final String NUMBER = "1";
 
     @Test
-    @Tag("with_browser")
+//    @Tag("with_browser")
     public void  testIssuePresentInRepoLambda(){
         step("Open URL", ()-> {
             open(URL);
