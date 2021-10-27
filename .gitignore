@@ -2,19 +2,15 @@
 *.class
 
 # Log file
-
 *.log
 
 # BlueJ files
-
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
-
 .mtj.tmp/
 
-# Package Files #
-
+# Package Files
 *.jar
 
 *.war
@@ -32,7 +28,6 @@
 *.iml
 
 # Project gen files
-
 .idea
 
 .allure/
@@ -63,4 +58,4 @@ target/
 /gradlew
 /gradlew.bat
 .todo
-local.properties
+.properties

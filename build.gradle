@@ -9,7 +9,7 @@ repositories {
 
 def allureVersion = '2.15.0',
     selenideVersion = '5.25.0-selenium-4.0.0',
-     junitVersion = '5.8.1'
+    junitVersion = '5.8.1'
 allure {
     version = allureVersion
     aspectjweaver = true
@@ -22,13 +22,13 @@ allure {
 
 dependencies {
     testImplementation(
-                "com.codeborne:selenide:$selenideVersion",
+            "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:2.15.0",
-      //      group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.32',
-       //     "io.qameta.allure:allure-spock:$allureVersion",
-       //     'io.qameta.allure:allure-junit5:2.15.0',
-       //     "org.assertj:assertj-core:3.21.0",
-
+            'org.aeonbits.owner:owner:1.0.12',
+            //      group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.32',
+            //     "io.qameta.allure:allure-spock:$allureVersion",
+            //     'io.qameta.allure:allure-junit5:2.15.0',
+            //     "org.assertj:assertj-core:3.21.0",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "org.junit.jupiter:junit-jupiter-params:$junitVersion"
     )
@@ -39,13 +39,13 @@ dependencies {
 
 }
 
-tasks.withType(JavaCompile){
+tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-tasks.withType(Test){
+tasks.withType(Test) {
     useJUnitPlatform()
     testLogging {
         lifecycle {
