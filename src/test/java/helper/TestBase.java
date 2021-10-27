@@ -23,7 +23,9 @@ public class TestBase {
         Configuration.startMaximized = true;
         String formatURL = String.format("https://$s:$s@selenoid.autotests.cloud/wd/hub/",
                 config.login(), config.password());
-        Configuration.remote = formatURL;
+        System.out.println(formatURL);
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+      //  Configuration.remote = formatURL;
 
     }
 
