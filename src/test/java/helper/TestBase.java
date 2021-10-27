@@ -24,6 +24,7 @@ public class TestBase {
         String formatURL = String.format("https://%s:%s@%s",
                 config.login(), config.password(), config.urlSelenoid());
         System.out.println(formatURL);
+        System.out.println(capabilities.toString());
         Configuration.remote = formatURL;
 
     }
