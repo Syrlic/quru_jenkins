@@ -1,31 +1,24 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import helper.TestBase;
 import io.qameta.allure.Allure;
-import io.qameta.allure.Attachment;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URI;
-
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class WithAllureDemo extends TestBase {
-    public static final String URL = "https://github.com";
-    public static final String REPOSITORY = "Syrlic/guru_allure";
+    public static final String URL = config.URL();
+    public static final String REPOSITORY = config.repository();
     public static final String NUMBER = "1";
 
     @Test
+    @Tag("with_browser")
     public void  testIssuePresentInRepoLambda(){
         step("Open URL", ()-> {
             open(URL);
