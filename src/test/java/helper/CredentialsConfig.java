@@ -10,5 +10,6 @@ public interface CredentialsConfig extends Config {
     String repository();
     String browserName();
     String browserVersion();
+    String urlSelenoid();
 
 }
